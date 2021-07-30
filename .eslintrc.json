@@ -16,5 +16,10 @@
     "ecmaVersion": 12
   },
   "plugins": ["@typescript-eslint", "prettier"],
-  "rules": { "no-console": "off", "no-cond-assign": ["error", "except-parens"] }
+  "rules": {
+    "no-console": "off",
+    "no-cond-assign": ["error", "except-parens"],
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off"
+  }
 }
