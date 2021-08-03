@@ -78,17 +78,15 @@ class Adder extends NumberConverter {
     const sum = numbers.reduce((s, number) => s + number);
     let output;
     switch (outputSystem) {
-      case "arabic":
-        output = this.toArabic(sum);
-        break;
       case "roman":
         output = this.toRoman(sum);
         break;
       case "morse":
         output = this.toMorse(sum);
         break;
+      case "arabic":
       default:
-        break;
+        output = this.toArabic(sum);
     }
     return output;
   }
@@ -99,17 +97,15 @@ class Subtractor extends NumberConverter {
     const difference = numbers.reduce((minuend, number) => minuend - number);
     let output;
     switch (outputSystem) {
-      case "arabic":
-        output = this.toArabic(difference);
-        break;
       case "roman":
         output = this.toRoman(difference);
         break;
       case "morse":
         output = this.toMorse(difference);
         break;
+      case "arabic":
       default:
-        break;
+        output = this.toArabic(difference);
     }
     return output;
   }
@@ -120,17 +116,15 @@ class Multiplicator extends NumberConverter {
     const product = numbers.reduce((factor, number) => factor * number);
     let output;
     switch (outputSystem) {
-      case "arabic":
-        output = this.toArabic(product);
-        break;
       case "roman":
         output = this.toRoman(product);
         break;
       case "morse":
         output = this.toMorse(product);
         break;
+      case "arabic":
       default:
-        break;
+        output = this.toArabic(product);
     }
     return output;
   }
@@ -141,17 +135,15 @@ class Divider extends NumberConverter {
     const fraction = numbers.reduce((divident, divisor) => divident / divisor);
     let output;
     switch (outputSystem) {
-      case "arabic":
-        output = this.toArabic(fraction);
-        break;
       case "roman":
         output = this.toRoman(fraction);
         break;
       case "morse":
         output = this.toMorse(fraction);
         break;
+      case "arabic":
       default:
-        break;
+        output = this.toArabic(fraction);
     }
     return output;
   }
@@ -163,7 +155,7 @@ console.log(adder.add("roman", 5, 4, 7));
 console.log(adder.add("morse", 5, 4, 7));
 
 const subtractor = new Subtractor();
-console.log(subtractor.subtract("arabic", 25, 10, 3));
+console.log(subtractor.subtract("undefined", 25, 10, 3));
 console.log(subtractor.subtract("roman", 25, 10, 3));
 console.log(subtractor.subtract("morse", 25, 10, 3));
 
@@ -173,6 +165,6 @@ console.log(multiplicator.multiply("roman", 3, 3, 3));
 console.log(multiplicator.multiply("morse", 3, 3, 3));
 
 const divider = new Divider();
-console.log(divider.divide("arabic", 48, 2, 2));
+console.log(divider.divide("фкфишс", 48, 2, 2));
 console.log(divider.divide("roman", 48, 2, 2));
 console.log(divider.divide("morse", 48, 2, 2));
